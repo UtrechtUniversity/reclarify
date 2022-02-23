@@ -1,6 +1,6 @@
 ## reclarify | automated categorisation and processing of LDIR particle data
 
-Last updated: 09-FEB-2022
+Last updated: 23-FEB-2022
 
 ### Purpose
 The purpose of this code is to automate the grouping of polymer analysis data from the Agilent Clarity software into polymer classes and then bin the resultant data by defined size groups to produce an overview of size and type.
@@ -40,10 +40,9 @@ You will need to:
 
 ### Possible Developments
 - [ ] Graphing of Microplastic share in slide
-- [ ] Automating removal of Â and Mu errors.
+- [ ] Automating removal of Â and Mu errors in imported data.
 - [ ] Automating processing of data from a server or from the analysis PC
 - [ ] A prompt and file-picker at the start would reduce the need to hardcode pickup location for the file, could also be used for export
 - [ ] Automated processing of spectral files into the required format would be great, but needs some form of back-end matching for spectral names to grouping.
 - [ ] Automatic check that two identical spectra haven't been given different groupings.
-- [ ] Inclusion of metadata using [dataspice](https://annakrystalli.me/rrresearchACCE20/dataspice.html)
 - [ ] Store a master library, and when importing libraries only add to the list, do not remove. May require Agilent to introduce a depreceated flag in the library.
