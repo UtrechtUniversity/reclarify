@@ -1,5 +1,5 @@
 # Workflow for automated analysis of LDIR data
-# Joey O'Dell Feb 2022 - No Rights Reserved (CC0)
+# https://github.com/joey4247/reclarify
 
 # load required packages for the analysis
 library("tidyverse")
