@@ -2,10 +2,16 @@
 
 process_spec_lib <-function(file) {
   # load csv
-  df.dataset <- utils::read.csv(file) 
+  df.dataset <- utils::read.csv(file, header=FALSE, row.names=NULL) 
   # transpose to put spectral names as columns
-  df.dataset <- base::t(df.dataset_raw)
-  df.dataset <- df.dataset_raw[, -c(1:ncol(df.dataset_raw))]
-  df.dataset <- df.dataset_raw[df.dataset_raw == ".."] <- " "
+  df.dataset <- base::t(df.dataset)
+  # drops all the spectral data to make the data frame leaner
+  df.dataset <- df.dataset[, -c(1:ncol(df.dataset_raw))]
+  # remove the '(Asborbance)' element as this doesn't show up in exports
+  df.dataset <- gsub(" \\(Absorbance)", "", df.dataset)
+  # remove the Â that appears before Mu
+  df.dataset <- gsub("Â", "", df.dataset)
+  # drop first row
+  df.dataset <- df.dataset[-1,]
   return(df.dataset)
 }
