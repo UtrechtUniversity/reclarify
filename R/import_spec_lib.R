@@ -1,8 +1,9 @@
 # spectral libraries import routine
+# imports two pre-processed libraries
 
 # currently works from the preprocessed files, needs to run from the data exported from clarity
 
-merge_spec_lib <-function(lib1file, lib1sheet, lib2file, lib2sheet) {
+import_spec_lib <-function(lib1file, lib1sheet, lib2file, lib2sheet) {
   df.SpecLib_1 <- readxl::read_excel(lib1file,
                                   sheet = lib1sheet,
                                   .name_repair = "universal") 
