@@ -10,9 +10,7 @@ library("openxlsx")
 
 # Input the sample characteristics here
 # SampleID <- dlgInput("Please enter Sample ID", default="")$res #- user-driven input
-SampleID <- "S_04_01"
-pcAnalysed <- 0.08    # as decimal percent to 2 d.places
-massSed <- 0.03079    # in kilograms
+SampleID <- "Blank_3_NaOCl"
 
 # the next two lines control the size class in microns for the output
 SizeClasses <- c(0,10,50,100,200,500,900)
@@ -71,12 +69,10 @@ pt$renderPivot()
 
 # calculate summary statistics
 stat.totalMPs <- sum(df.data_categorised$IsPlastic == 1)
-stat.extrapMPs <- stat.totalMPs / pcAnalysed
-stat.MPsperkilo <- stat.totalMPs / massSed
 
 # create data frame for the summary statistics
-df.SummaryStats <- data.frame(Characteristic=c("Sample ID", "Share Analysed","Kg Sediment","Total MPs","Extrapolated MPs", "MPs per Kilogram"),
-                              Value=c(SampleID, pcAnalysed, massSed, stat.totalMPs, stat.extrapMPs, stat.MPsperkilo))
+df.SummaryStats <- data.frame(Characteristic=c("Sample ID","Total MPs"),
+                              Value=c(SampleID, stat.totalMPs))
 
 # export to excel workbook
 # create workbook with ourselves as the author
