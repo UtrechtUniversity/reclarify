@@ -10,7 +10,7 @@ This code is written by [Joey O'Dell](https://github.com/joey4247) primarily in 
 
 Further support has been provided by the [Department of Earth Sciences at Utrecht University](https://www.uu.nl/en/research/department-of-earth-sciences), [Department of Inorganic Environmental Chemistry at the Helmholtz-Zentrum Hereon GmbH](https://www.hereon.de/institutes/coastal_environmental_chemistry/inorganic_environmental_chemistry/index.php.en), the [Helhomtz Coastal Data Centre](https://www.hereon.de/central_units/hcdc/index.php.en), and the [International Marine Litter Unit of the University of Plymouth](https://www.plymouth.ac.uk/research/marine-litter).
 
-## Help
+### Help
 README files are provided throughout the code bundle. Further help is available in the [Wiki](https://github.com/UtrechtUniversity/reclarify/wiki) and bug reports, suggestions, or faults can be reported [through the GitHub issue tracker](https://github.com/UtrechtUniversity/reclarify/issues).
 
 ### Copyright
