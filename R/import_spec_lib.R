@@ -19,7 +19,7 @@ import_spec_lib <-function(lib1file, lib1sheet, lib2file, lib2sheet) {
                                      sheet = lib2sheet,
                                      .name_repair = "universal") 
   df.SpecLib_bind <- dplyr::bind_rows(df.SpecLib_1, df.SpecLib_2)
-  df.SpecLib <- df.SpecLib_bind %>% dplyr::distinct(Spectra, .keep_all = TRUE)
+  df.SpecLib <- dplyr::distinct(df.SpecLib_bind, .keep_all = TRUE)
   return(df.SpecLib)
   
 }
