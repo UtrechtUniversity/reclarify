@@ -2,7 +2,7 @@ Package: reclarify
 Title: Automated Analysis Of LDIR Particle Data
 Version: 0.0.0.9000
 Authors@R: 
-    person("Joey", "O'Dell", , "https://www.github.com/joey4247", role = c("aut", "cre"),
+    person("Joey", "O'Dell", , "data@opendelve.eu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-3953-8150"))
 Description: This package provides a suite of tools to automate the processing of LDIR data from the Agilent Clarity Chemical Imaging Software, as well as preparing and cleansing data libraries and automating routine processing.
 License: GPL (>= 3)

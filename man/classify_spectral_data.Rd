@@ -18,7 +18,7 @@ classify_spectral_data(
 
 \item{HitRate}{Quality rate lower bound as decimal}
 
-\item{SizeClass}{Array of integers for size binning}
+\item{SizeClasses}{Array of integers for size binning}
 }
 \value{
 Input dataset classified by polymer family and identified as plastic or not

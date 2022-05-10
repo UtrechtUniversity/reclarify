@@ -7,11 +7,12 @@
 #' @param LDIRData Data frame containing LDIR particle analysis data
 #' @param SpecLib Data frame containing spectral family mappings
 #' @param HitRate Quality rate lower bound as decimal
-#' @param SizeClass Array of integers for size binning
+#' @param SizeClasses Array of integers for size binning
 #' @return Input dataset classified by polymer family and identified as plastic or not
 #' @export
 
 classify_spectral_data <-function(LDIRData, SpecLib, HitRate = 0.8, SizeClasses = c(0,10,50,100,200,500,900)) {
+  # remove values below hit rate
   LDIRData <- dplyr::filter(LDIRData, Quality>=HitRate)
   # Filter again to remove rejected results
   LDIRData <- dplyr::filter(LDIRData, Is.Valid=="true")
@@ -19,7 +20,7 @@ classify_spectral_data <-function(LDIRData, SpecLib, HitRate = 0.8, SizeClasses 
   LDIRData <- base::merge(LDIRData, SpecLib, by.x = "Identification", by.y = "Spectra", all.x = TRUE)
   LDIRData %>% dplyr::group_by(Grouping)
   # binning data by predetermined size classes
-  LDIRData <- LDIRData %>% dplyr::mutate(diameter.binned = cut(Diameter..μm., breaks=SizeClasses))
+  LDIRData <- LDIRData %>% dplyr::mutate(diameter.binned = cut(paste0("Diameter..","\u00B5","m"), breaks=SizeClasses))
   # add IsPlastic flag to enable grouping in table
   LDIRData <- LDIRData %>% dplyr::mutate(IsPlastic = ifelse(Grouping!="Natural components",1,0))
   return(LDIRData)
