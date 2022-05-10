@@ -19,7 +19,7 @@ classify_spectral_data <-function(LDIRData, SpecLib, HitRate = 0.8, SizeClasses 
   LDIRData <- base::merge(LDIRData, SpecLib, by.x = "Identification", by.y = "Spectra", all.x = TRUE)
   LDIRData %>% dplyr::group_by(Grouping)
   # binning data by predetermined size classes
-  LDIRData <- LDIRData %>% dplyr::mutate(Diameter.binned = cut(Diameter..μm., breaks=SizeClasses))
+  LDIRData <- LDIRData %>% dplyr::mutate(diameter.binned = cut(Diameter..μm., breaks=SizeClasses))
   # add IsPlastic flag to enable grouping in table
   LDIRData <- LDIRData %>% dplyr::mutate(IsPlastic = ifelse(Grouping!="Natural components",1,0))
   return(LDIRData)
