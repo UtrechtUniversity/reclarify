@@ -4,15 +4,24 @@
 \alias{classify_spectral_data}
 \title{Classify Spectral Data}
 \usage{
-classify_spectral_data(input, library, output, SizeClasses, sizelabels)
+classify_spectral_data(
+  LDIRData,
+  SpecLib,
+  HitRate = 0.8,
+  SizeClasses = c(0, 10, 50, 100, 200, 500, 900)
+)
 }
 \arguments{
-\item{input}{Path to the input file}
+\item{LDIRData}{Data frame containing LDIR particle analysis data}
 
-\item{SizeClasses}{An array with the defined size class bins}
+\item{SpecLib}{Data frame containing spectral family mappings}
+
+\item{HitRate}{Quality rate lower bound as decimal}
+
+\item{SizeClass}{Array of integers for size binning}
 }
 \value{
-A matrix of the infile
+Input dataset classified by polymer family and identified as plastic or not
 }
 \description{
 This function inspects a pre-loaded library, and then removes any particles
