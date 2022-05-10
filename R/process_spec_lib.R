@@ -1,3 +1,13 @@
+#' Process Spec Lib
+#'
+#' This function takes the raw CSV spectral library output from clarity
+#' and transforms it into a data frame that can then be classified
+#' It should then be exported to an XLSX if using import_spec_lib
+#'
+#' @param file Path to the raw spectral library export from clarity
+#' @return A data frame containing the required columns for a particle library
+#' @export
+
 # spectral libraries csv preprocessing routine
 
 process_spec_lib <-function(file) {
