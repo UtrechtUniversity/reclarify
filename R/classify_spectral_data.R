@@ -18,7 +18,7 @@ classify_spectral_data <-function(LDIRData, SpecLib, HitRate = 0.8, SizeClasses 
   LDIRData <- dplyr::filter(LDIRData, Is.Valid=="true")
   # joining the filtered data table with the spectra library
   LDIRData <- base::merge(LDIRData, SpecLib, by.x = "Identification", by.y = "Spectra", all.x = TRUE)
-  LDIRData %>% dplyr::group_by(Grouping)
+  LDIRData <- dplyr::group_by(LDIRData, Grouping)
   # binning data by predetermined size classes
   LDIRData <- LDIRData %>% dplyr::mutate(diameter.binned = cut(paste0("Diameter..","\u00B5","m"), breaks=SizeClasses))
   # add IsPlastic flag to enable grouping in table
