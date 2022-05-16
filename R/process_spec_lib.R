@@ -20,7 +20,7 @@ process_spec_lib <-function(file) {
   # remove the '(Absorbance)' element as this doesn't show up in clarity exports
   df.dataset <- gsub(" \\(Absorbance)", "", df.dataset)
   # remove the Â that appears before Mu
-  df.dataset <- gsub("Â", "", df.dataset)
+  df.dataset <- gsub("\u00C2", "", df.dataset)
   # drop first row which contains irrelevant data
   df.dataset <- df.dataset[-1,]
   return(df.dataset)
