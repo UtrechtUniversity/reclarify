@@ -5,7 +5,7 @@ Authors@R:
     person("Joey", "O'Dell", , "data@opendelve.eu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-3953-8150"))
 Description: This package provides a suite of tools to automate the processing of LDIR data from the Agilent Clarity Chemical Imaging Software, as well as preparing and cleansing data libraries and automating routine processing.
-License: GPL (>= 3)
+License: GPL (>= 3) + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
