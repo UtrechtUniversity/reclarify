@@ -20,8 +20,8 @@ classify_spectral_data <-function(LDIRData, SpecLib, HitRate = 0.8, SizeClasses 
   df.loopdata <- base::merge(df.loopdata, SpecLib, by.x = "Identification", by.y = "Spectra", all.x = TRUE)
   df.loopdata <- dplyr::group_by(df.loopdata, Grouping)
   # binning data by predetermined size classes
-  df.loopdata <- df.loopdata %>% dplyr::mutate(diameter.binned = base::cut(paste0("Diameter..","\u00B5","m"), breaks=SizeClasses))
+  df.loopdata$diameter.binned <- base::cut(df.loopdata$Diameter..µm.,SizeClasses)
   # add IsPlastic flag to enable grouping in table
-  df.loopdata$IsPlastic <- ifelse(df.loopdata$Grouping!="Natural components",1,0)
+  df.loopdata$IsPlastic <- base::ifelse(df.loopdata$Grouping!="Natural components",1,0)
   return(df.loopdata)
 }
