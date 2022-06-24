@@ -1,6 +1,6 @@
 # EXAMPLE APPLICATION FOR THE RECLARIFY CODE PACKAGE
 # This programme takes the preprocessed data and exports a matched particle
-# dataset as well as a pivottable
+# dataset
 #
 # https://github.com/UtrechtUniversity/reclarify
 
@@ -40,7 +40,7 @@ df.LDIRData <- read_excel(InputFile, sheet = "Particles", .name_repair = "univer
 # bin and classify data
 df.Output <- classify_spectral_data(df.LDIRData, df.SpecLib, HitRate = 0.9)
 
-# output to csv to preserve particle grouping data before pivottable
+# output to csv to preserve particle grouping data
 write.csv(df.Output, OutputCSV, row.names = FALSE)
 
 # create data frame for the summary statistics
